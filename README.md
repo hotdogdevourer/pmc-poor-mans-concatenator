@@ -51,7 +51,7 @@ Nine voice banks are included, differing only in how aggressively the audio is p
 | `voice_bank_14b.vbc` | 14-bit |
 | `voice_bank_16b.vbc` | 16-bit (no packing) |
 
-Each bank has 3408 entries. The sweet spot is somewhere in the middle, probably idk xd
+Each bank has 3408 entries. The sweet spot is somewhere in the middle, probably idk xd. Lower bit depths = smaller files but more "crunch." Higher bit depths = larger files but smoother audio. 4-bit is usually the best balance for me lol
 
 ---
 
