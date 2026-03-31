@@ -37,19 +37,14 @@ There's an `examples/example.wav` in the repo if you want to hear what you're ge
 
 ## Voice banks
 
-Nine voice banks are included, differing only in how aggressively the audio is packed. Pick your poison:
+Three voice banks are included, differing only in how aggressively the audio is packed. Pick your poison:
 
 | File | Bit depth |
 |---|---|
 | `voice_bank_1b.vbc` | 1-bit |
 | `voice_bank_2b.vbc` | 2-bit |
 | `voice_bank_4b.vbc` | 4-bit |
-| `voice_bank_6b.vbc` | 6-bit |
-| `voice_bank_8b.vbc` | 8-bit |
-| `voice_bank_10b.vbc` | 10-bit |
-| `voice_bank_12b.vbc` | 12-bit |
-| `voice_bank_14b.vbc` | 14-bit |
-| `voice_bank_16b.vbc` | 16-bit (no packing) |
+Voice banks 6-16 refused to upload :(
 
 Each bank has 3408 entries. The sweet spot is somewhere in the middle, probably idk xd. Lower bit depths = smaller files but more "crunch." Higher bit depths = larger files but smoother audio. 4-bit is usually the best balance for me lol
 
