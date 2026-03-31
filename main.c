@@ -715,33 +715,28 @@ static int tokenize_text(const char *text, const VoiceBank *vb, TokenList *out) 
         order[b+1] = tmp;
     }
 
-    size_t i = 0;
-    while (i < tlen) {
-        if (lower[i] == ' ') { i++; continue; }
-
-        size_t word_start = i;
-        while (i < tlen && lower[i] != ' ') i++;
-        size_t word_end = i;                  
-
-        size_t pos = word_start;
-        while (pos < word_end) {
-            int matched = 0;
-            for (uint32_t k = 0; k < ec; k++) {
-                uint32_t idx = order[k];
-                const char *sk = stripped[idx];
-                size_t      sl = strlen(sk);
+    {
+        size_t pos = 0;
+        while (pos < tlen) {
+            int      matched = 0;
+            uint32_t k;
+            if (lower[pos] == ' ') { pos++; continue; }
+            for (k = 0; k < ec; k++) {
+                uint32_t    idx = order[k];
+                const char *sk  = stripped[idx];
+                size_t      sl  = strlen(sk);
                 if (sl == 0) continue;
-                if (pos + sl <= word_end &&
+                if (pos + sl <= tlen &&
                     strncmp(lower + pos, sk, sl) == 0)
                 {
-                    int is_we = (pos + sl == word_end);
+                    int is_we = (pos + sl == tlen) || (lower[pos + sl] == ' ');
                     token_list_push(out, original[idx], is_we);
                     pos += sl;
                     matched = 1;
                     break;
                 }
             }
-            if (!matched) pos++;                         
+            if (!matched) pos++;
         }
     }
 
